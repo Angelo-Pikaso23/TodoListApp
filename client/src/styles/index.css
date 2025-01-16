@@ -1,0 +1,179 @@
+/* Variables de colores */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --secondary-color: #6c757d;
+  --background-gradient-start: #007bff;
+  --background-gradient-end: #6c757d;
+  --text-color: #333;
+  --text-light: #555;
+  --error-color: red;
+  --white: #ffffff;
+  --input-border: #ddd;
+  --backround:linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+  --search-input: #14162b;
+  --theme-color: rgba(16 18 27 / 40%);
+  --border-color: rgba(113 119 144 / 25%);
+  --theme-white: #f9fafb;
+  --inactive-color: rgb(113 119 144 / 78%);
+  --body-font: "Poppins", sans-serif;
+  --hover-menu-bg: rgba(12 15 25 / 30%);
+  --content-title-color: #999ba5;
+  --content-bg: rgb(146 151 179 / 13%);
+  --button-inactive: rgb(249 250 251 / 55%);
+  --dropdown-bg: #21242d;
+  --dropdown-hover: rgb(42 46 60);
+  --popup-bg: rgb(22 25 37);
+  --search-bg: #14162b;
+  --overlay-bg: rgba(36, 39, 59, 0.3);
+  --scrollbar-bg: rgb(1 2 3 / 40%);
+}
+.login {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--primary-hover);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal de la página */
+.login-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Cabecera de la página */
+.login-header {
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.login-header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Contenedor del formulario de login */
+.login-container {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título del formulario */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Grupo de formulario */
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  color: var(--text-light);
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--input-border);
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Botón de inicio de sesión */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Enlaces adicionales */
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.form-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.form-links a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .login-container {
+      padding: 20px;
+  }
+
+  .login-header h1 {
+      font-size: 28px;
+  }
+
+  .login-header p {
+      font-size: 16px;
+  }
+}

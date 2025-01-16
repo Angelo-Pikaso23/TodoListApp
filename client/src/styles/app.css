@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --theme-bg-color: rgba(16, 18, 27, 0.4);
+    --border-color: rgba(113, 119, 144, 0.25);
+    --theme-color: #f9fafb;
+    --inactive-color: rgba(113, 119, 144, 0.78);
+    --body-font: "Poppins", sans-serif;
+    --hover-menu-bg: rgba(12, 15, 25, 0.3);
+    --content-title-color: #999ba5;
+    --content-bg: rgba(146, 151, 179, 0.13);
+    --button-inactive: rgba(249, 250, 251, 0.55);
+    --dropdown-bg: #21242d;
+    --dropdown-hover: rgb(42, 46, 60);
+    --popup-bg: rgb(22, 25, 37);
+    --search-bg: #14162b;
+    --overlay-bg: rgba(36, 39, 59, 0.3);
+    --scrollbar-bg: rgba(1, 2, 3, 0.4);
+}
+
+.light-mode {
+    --theme-bg-color: rgba(255, 255, 255, 0.31);
+    --theme-color: #3c3a3a;
+    --inactive-color: #333333;
+    --button-inactive: #3c3a3a;
+    --search-bg: rgba(255, 255, 255, 0.31);
+    --dropdown-bg: #f7f7f7;
+    --overlay-bg: rgba(255, 255, 255, 0.3);
+    --dropdown-hover: rgb(236, 236, 236);
+    --border-color: rgba(255, 255, 255, 0.35);
+    --popup-bg: rgb(255, 255, 255);
+    --hover-menu-bg: rgba(255, 255, 255, 0.35);
+    --scrollbar-bg: rgba(255, 253, 253, 0.57);
+    --content-title-color: var(--theme-color);
+}
+
+body {
+    font-family: var(--body-font);
+    /* background-image: url(../../public/favicon.jpeg); */
+	background-color: var(--dropdown-bg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    width: 100%;
+    height: 100vh;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        padding: 0.6em;
+    }
+}
+
+.App {
+    background-color: rgba(255, 255, 255, 0.1);
+    max-width: 1250px;
+    max-height: 860px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    height: 58px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 30px;
+    white-space: nowrap;
+	background-color: var(--hover-menu-bg);
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 0 16px;
+    }
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.header-menu a {
+    padding: 20px 30px;
+    text-decoration: none;
+    color: var(--inactive-color);
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.header-menu a.is-active,
+.header-menu a:hover {
+    color: var(--theme-color);
+    border-bottom: 2px solid var(--theme-color);
+}
+
+@media screen and (max-width: 610px) {
+    .header-menu a:not(.main-header-link) {
+        display: none;
+    }
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.search-bar input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color: var(--search-bg);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 20px 0 40px;
+    box-shadow: 0 0 0 2px rgba(134, 140, 160, 0.02);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56.966 56.966' fill='%23717790c7'%3e%3cpath d='M55.146 51.887L41.588 37.786A22.926 22.926 0 0046.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 00.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z'/%3e%3c/svg%3e");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: 16px 48%;
+    color: var(--theme-color);
+}
+
+.search-bar input::-moz-placeholder,
+.search-bar input:-ms-input-placeholder,
+.search-bar input::placeholder {
+    font-family: var(--body-font);
+    color: var(--inactive-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.main-header .header-menu {
+    margin-left: 150px;
+}
+
+@media screen and (max-width: 1055px) {
+    .main-header .header-menu {
+        margin: auto;
+    }
+}
+
+.main-header .header-menu a {
+    padding: 20px 24px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.menu-link-main {
+    text-decoration: none;
+    color: var(--theme-color);
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 1055px) {
+    .menu-link-main {
+        display: none;
+    }
+}
+
+.list {
+    margin-top: 20px;
+}
+
+.list .item {
+    background-color: #000;
+    color: var(--inactive-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.icons {
+    position: absolute;
+    top: auto;
+    transform: translateY(-50%);
+    right: 10px;
+    display: flex;
+    gap: 0.5rem;
+}
+/* Estilos para el botón de logout */
+.logout-button {
+    background-color: var(--theme-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para la lista de tareas */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilos para cada tarea */
+.list .item {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--theme-color);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.list .item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover para las tareas */
+}
+
+/* Estilos para el campo de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative; /* Para posicionar los iconos si es necesario */
+}
+
+/* Estilos para los iconos en el campo de búsqueda */
+.icons {
+    position: absolute;
+    right: 10px; /* Ajusta según sea necesario */
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Estilos para el contenedor principal */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para el encabezado */
+.header {
+    display: flex;
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%;
+}
+
+/* Estilos para el menú de navegación */
+.header-menu {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los enlaces del menú */
+.header-menu a {
+    margin: 0 10px; /* Espaciado entre enlaces */
+    color: var(--inactive-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header-menu a:hover {
+    color: var(--theme-color); /* Cambiar color al pasar el ratón */
+}
+.header.wide {
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: background-color 0.3s ease-in-out;
+  }
+  
+/* Estilos para el contenedor de tareas */
+.list {
+    width: 100%; /* Asegura que la lista ocupe todo el ancho */
+    max-width: 600px; /* Limitar el ancho máximo */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilos para el botón de logout */
+.logout-button {
+    margin-top: 20px; /* Espaciado superior */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: var(--theme-color); /* Color de fondo */
+    color: #fff; /* Color del texto */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Efecto hover */
+}

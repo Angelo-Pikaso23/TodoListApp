@@ -1,0 +1,31 @@
+.
+|-- Server.js
+|-- client
+|   |-- README.md
+|   |-- package-lock.json
+|   |-- package.json
+|   |-- public
+|   |   |-- favicon.ico
+|   |   |-- index.html
+|   |   |-- logo192.png
+|   |   |-- logo512.png
+|   |   |-- manifest.json
+|   |   `-- robots.txt
+|   `-- src
+|       |-- App.js
+|       |-- app.css
+|       |-- components
+|       |   `-- Item.js
+|       |-- index.css
+|       `-- index.js
+|-- controllers
+|   `-- ToDoController.js
+|-- estructura_proyecto.txt
+|-- models
+|   `-- ToDoModal.js
+|-- package-lock.json
+|-- package.json
+`-- routes
+    `-- TodoRoute.js
+
+7 directories, 21 files
